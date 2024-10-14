@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editor</title>
+    <style>
+        #bod {
+            display: block;
+            height: 10vh;
+            width: 1000px;
+            border: 1px solid black;
+            padding: auto;
+        }
+
+        #small {
+            display: inline;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: auto;
+            cursor: pointer;
+        }
+
+        #bold {
+            display: inline;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: auto;
+            cursor: pointer;
+
+        }
+
+        #underline {
+            display: inline;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: auto;
+            cursor: pointer;
+
+        }
+
+        #italic {
+            display: inline;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: auto;
+            cursor: pointer;
+        }
+
+        #upper {
+            display: inline;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: auto;
+            cursor: pointer;
+        }
+
+        #lower {
+            display: inline;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: auto;
+            cursor: pointer;
+        }
+
+        #line-through {
+            display: inline;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: auto;
+            cursor: pointer;
+            text-decoration: line-through;
+        }
+
+        #large {
+            display: inline;
+            height: 50px;
+            width: 50px;
+            border: 1px solid black;
+            margin: 10px;
+            padding: auto;
+            cursor: pointer;
+        }
+
+
+        .italic{
+            font-style: italic;
+        }
+
+        .line {
+            text-decoration: line-through;
+        }
+
+        .under {
+            text-decoration: underline;
+        }
+
+        .bold {
+            font-weight: bolder;
+        }
+
+        .lower {
+            text-transform: lowercase;
+        }
+
+        .uppercase {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bod">
+        <button id="small" onclick="Large()">Aa <sup>+</sup></button>
+        <button id="large" onclick="Small()">Aa <sup>-</sup></button>
+        <button id="bold" onclick="Bold()">B</button>
+        <button id="underline" onclick="Under()"><u>U</u></button>
+        <button id="italic" onclick="Italic()"><em>I</em></button>
+        <button id="line-through" onclick="Line()">Aa</button>
+        <button id="upper" onclick="Upper()">AA</button>
+        <button id="lower" onclick="Lower()">aa</button>
+
+    </div>
+    <div class="Change">This is a editor paragraph</div>
+    <script>
+        const b = document.querySelector('.Change');
+        function Small() {
+          let currentSize = window.getComputedStyle(b).fontSize;
+         // console.log(currentSize);
+          let newSize = parseInt(currentSize) - 2;
+          b.style.fontSize = `${newSize}px`;
+        }
+        function Large() {
+            let currentSize = window.getComputedStyle(b).fontSize;
+          let newSize = parseInt(currentSize) + 2;
+          b.style.fontSize = `${newSize}px`;
+        }
+        function Lower() {
+            b.classList.toggle("lower");
+        }
+        function Upper() {
+            b.classList.toggle("uppercase");
+        }
+        function Bold() {
+            b.classList.toggle("bold");
+        }
+        function Under() {
+            b.classList.toggle("under");
+        }
+        function Italic() {
+            b.classList.toggle("italic");
+        }
+        function Line() {
+            b.classList.toggle("line");
+        }
+
+
+    </script>
+</body>
+
+</html>
